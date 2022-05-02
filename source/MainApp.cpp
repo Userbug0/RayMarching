@@ -1,6 +1,7 @@
 #include "MainApp.h"
 #include "Settings.h"
 #include "Circle.h"
+#include "Rect.h"
 
 
 MainApp::MainApp()
@@ -21,7 +22,10 @@ void MainApp::initObjects()
 {
 	m_objects.push_back(new Circle({WINDOW_WIDTH / 4, WINDOW_HEIGHT / 6}, 40));
 	m_objects.push_back(new Circle({ WINDOW_WIDTH / 3, WINDOW_HEIGHT / 1.3f }, 85));
-	m_objects.push_back(new Circle({ WINDOW_WIDTH / 1.2f, WINDOW_HEIGHT / 1.4f }, 90));
+	m_objects.push_back(new Circle({ WINDOW_WIDTH / 1.2f, WINDOW_HEIGHT / 1.4f }, 65));
+
+	m_objects.push_back(new Rect({ WINDOW_WIDTH / 1.35f, WINDOW_HEIGHT / 5 }, 130, 100));
+	m_objects.push_back(new Rect({ WINDOW_WIDTH / 2.2f, WINDOW_HEIGHT / 2.6f }, 100, 100));
 }
 
 

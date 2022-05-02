@@ -1,23 +1,20 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-
 #include "Object.h"
 
 
-class Circle: public Object
+class Rect: public Object
 {
 public:
-	Circle(const Vector2& position, float radius);
+	Rect(const Vector2& position, float width, float height);
 
 	void Draw(sf::RenderWindow* window) const override;
-
 	float GetSignedDistance(const Vector2& point) const override;
 
 private:
-	sf::CircleShape m_shape;
+	sf::RectangleShape m_shape;
 	/// <summary>
-	/// Center of Circle
+	/// Left upper corner
 	/// </summary>
 	Vector2 m_position;
 };
