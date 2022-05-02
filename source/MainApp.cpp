@@ -1,5 +1,6 @@
 #include "MainApp.h"
 #include "Settings.h"
+#include "Circle.h"
 
 
 MainApp::MainApp()
@@ -18,9 +19,9 @@ MainApp::MainApp()
 
 void MainApp::initObjects()
 {
-	m_circles.push_back(Circle({WINDOW_WIDTH / 4, WINDOW_HEIGHT / 6}, 40));
-	m_circles.push_back(Circle({ WINDOW_WIDTH / 3, WINDOW_HEIGHT / 1.3f }, 85));
-	m_circles.push_back(Circle({ WINDOW_WIDTH / 1.2f, WINDOW_HEIGHT / 1.4f }, 90));
+	m_objects.push_back(new Circle({WINDOW_WIDTH / 4, WINDOW_HEIGHT / 6}, 40));
+	m_objects.push_back(new Circle({ WINDOW_WIDTH / 3, WINDOW_HEIGHT / 1.3f }, 85));
+	m_objects.push_back(new Circle({ WINDOW_WIDTH / 1.2f, WINDOW_HEIGHT / 1.4f }, 90));
 }
 
 
@@ -28,10 +29,10 @@ void MainApp::render()
 {
 	m_Window->clear(m_backgroundColor);
 
-	for (auto& circle : m_circles)
-		circle.Draw(m_Window);
+	for (auto& object : m_objects)
+		object->Draw(m_Window);
 
-	m_Player.Draw(m_Window, m_circles);
+	m_Player.Draw(m_Window, m_objects);
 
 	m_Window->display();
 }
@@ -91,5 +92,8 @@ void MainApp::handleEvents()
 
 MainApp::~MainApp()
 {
+	for (auto& object: m_objects)
+		delete object;
+
 	delete m_Window;
 }

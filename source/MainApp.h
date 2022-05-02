@@ -1,8 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+
 #include "RayMarcher.h"
-#include "Circle.h"
+#include "Object.h"
 
 
 class MainApp
@@ -22,7 +23,7 @@ private:
 	void initObjects();
 
 	RayMarcher m_Player;
-	std::vector<Circle> m_circles;
+	std::vector<Object*> m_objects;
 
 	sf::RenderWindow* m_Window;
 	sf::Color m_backgroundColor;

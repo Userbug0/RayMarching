@@ -9,17 +9,17 @@ RayMarcher::RayMarcher(float speed, const Vector2& position, const Vector2& sigh
 }
 
 
-void RayMarcher::Draw(sf::RenderWindow* window, const std::vector<Circle>& circles)
+void RayMarcher::Draw(sf::RenderWindow* window, const std::vector<Object*>& m_objects)
 {
 	drawRay(window);
 
-	marching(window, circles);
+	marching(window, m_objects);
 
 	MovAble::Draw(window);
 }
 
 
-void RayMarcher::marching(sf::RenderWindow* window, const std::vector<Circle>& circles)
+void RayMarcher::marching(sf::RenderWindow* window, const std::vector<Object*>& m_objects)
 {
 	float minDistance = WINDOW_WIDTH;
 	float signedDistance;
@@ -32,12 +32,13 @@ void RayMarcher::marching(sf::RenderWindow* window, const std::vector<Circle>& c
 
 	while (Vector2::Distance(point, GetPosition()) < m_rayLength)
 	{
-		for (auto& circle : circles)
+		for (auto& object : m_objects)
 		{
-			signedDistance = circle.GetSignedDistance(point);
+			signedDistance = object->GetSignedDistance(point);
 			if (minDistance > signedDistance)
 				minDistance = signedDistance;
 		}
+
 		if (minDistance >= 1)
 		{
 			visualized.setRadius(minDistance);

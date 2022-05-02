@@ -2,17 +2,17 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Vector2.h"
+#include "Object.h"
 
 
-class Circle
+class Circle: public Object
 {
 public:
 	Circle(const Vector2& position, float radius);
 
-	void Draw(sf::RenderWindow* window) const;
+	void Draw(sf::RenderWindow* window) const override;
 
-	float GetSignedDistance(const Vector2& point) const;
+	float GetSignedDistance(const Vector2& point) const override;
 
 private:
 	sf::CircleShape m_toDraw;

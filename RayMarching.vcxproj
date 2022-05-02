@@ -30,6 +30,7 @@
     <ClInclude Include="source\Circle.h" />
     <ClInclude Include="source\MainApp.h" />
     <ClInclude Include="source\MovAble.h" />
+    <ClInclude Include="source\Object.h" />
     <ClInclude Include="source\RayMarcher.h" />
     <ClInclude Include="source\Settings.h" />
     <ClInclude Include="source\Vector2.h" />

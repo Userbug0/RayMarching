@@ -53,5 +53,8 @@
     <ClInclude Include="source\Circle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
