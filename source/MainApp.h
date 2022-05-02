@@ -22,7 +22,7 @@ private:
 	void initObjects();
 
 	RayMarcher m_Player;
-	std::vector<Circle> circles;
+	std::vector<Circle> m_circles;
 
 	sf::RenderWindow* m_Window;
 	sf::Color m_backgroundColor;

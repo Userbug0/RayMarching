@@ -18,9 +18,9 @@ MainApp::MainApp()
 
 void MainApp::initObjects()
 {
-	circles.push_back(Circle({WINDOW_WIDTH / 4, WINDOW_HEIGHT / 6}, 40));
-	circles.push_back(Circle({ WINDOW_WIDTH / 3, WINDOW_HEIGHT / 1.3 }, 85));
-	circles.push_back(Circle({ WINDOW_WIDTH / 1.2, WINDOW_HEIGHT / 1.4 }, 90));
+	m_circles.push_back(Circle({WINDOW_WIDTH / 4, WINDOW_HEIGHT / 6}, 40));
+	m_circles.push_back(Circle({ WINDOW_WIDTH / 3, WINDOW_HEIGHT / 1.3f }, 85));
+	m_circles.push_back(Circle({ WINDOW_WIDTH / 1.2f, WINDOW_HEIGHT / 1.4f }, 90));
 }
 
 
@@ -28,10 +28,10 @@ void MainApp::render()
 {
 	m_Window->clear(m_backgroundColor);
 
-	for (auto& circle : circles)
+	for (auto& circle : m_circles)
 		circle.Draw(m_Window);
 
-	m_Player.Draw(m_Window);
+	m_Player.Draw(m_Window, m_circles);
 
 	m_Window->display();
 }

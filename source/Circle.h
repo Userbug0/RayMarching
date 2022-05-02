@@ -10,10 +10,9 @@ class Circle
 public:
 	Circle(const Vector2& position, float radius);
 
-	void Draw(sf::RenderWindow* window);
+	void Draw(sf::RenderWindow* window) const;
 
-	float GetRadius() const;
-	Vector2 GetPosition() const;
+	float GetSignedDistance(const Vector2& point) const;
 
 private:
 	sf::CircleShape m_toDraw;
