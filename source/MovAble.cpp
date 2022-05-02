@@ -2,10 +2,10 @@
 
 
 MovAble::MovAble(float speed, const Vector2& position)
-	: m_radius(7), m_direction(0, 0), m_position(position), m_speed(speed)
+	: m_radius(6), m_direction(0, 0), m_position(position), m_speed(speed)
 {
 	m_toDraw.setRadius(m_radius);
-	m_toDraw.setFillColor(sf::Color::Green);
+	m_toDraw.setFillColor(sf::Color::White);
 	m_toDraw.setPosition({ m_position.x - m_radius, m_position.y - m_radius });
 }
 

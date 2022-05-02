@@ -1,6 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "RayCaster.h"
+
 
 class MainApp
 {
@@ -16,7 +18,10 @@ private:
 	void render();
 	void update(const sf::Time& frameTime);
 
-	bool m_running;
 	sf::RenderWindow* m_Window;
+	RayCaster m_Player;
+
+	sf::Color m_backgroundColor;
+	bool m_running;
 };
 
