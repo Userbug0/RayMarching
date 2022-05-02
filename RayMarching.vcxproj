@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Circle.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MainApp.cpp" />
     <ClCompile Include="source\MovAble.cpp" />
@@ -26,6 +27,7 @@
     <ClCompile Include="source\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Circle.h" />
     <ClInclude Include="source\MainApp.h" />
     <ClInclude Include="source\MovAble.h" />
     <ClInclude Include="source\RayMarcher.h" />

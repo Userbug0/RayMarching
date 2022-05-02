@@ -1,7 +1,6 @@
 #include "RayMarcher.h"
 #include "Settings.h"
 
-#include <iostream>
 
 RayMarcher::RayMarcher(float speed, const Vector2& position, const Vector2& sightDir)
 	: MovAble(speed, position), m_sightDir(sightDir)
@@ -38,5 +37,4 @@ void RayMarcher::LookAt(const Vector2& direction)
 {
 	m_sightDir = direction - GetPosition();
 	m_sightDir.normalize();
-
 }

@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "RayMarcher.h"
+#include "Circle.h"
 
 
 class MainApp
@@ -18,9 +19,12 @@ private:
 	void render();
 	void update(const sf::Time& frameTime);
 
-	sf::RenderWindow* m_Window;
-	RayMarcher m_Player;
+	void initObjects();
 
+	RayMarcher m_Player;
+	std::vector<Circle> circles;
+
+	sf::RenderWindow* m_Window;
 	sf::Color m_backgroundColor;
 	bool m_running;
 };

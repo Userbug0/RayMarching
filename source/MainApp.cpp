@@ -4,13 +4,42 @@
 
 MainApp::MainApp()
 	: m_running(false), m_backgroundColor({ 30, 30, 30 }),
-	  m_Player(150, { WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2}, {1, 0})
+	  m_Player(150, { WINDOW_WIDTH / 8, WINDOW_HEIGHT / 4 }, {1, 0})
 {
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 
 	m_Window = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "DDA-3D", sf::Style::Close, settings);
 	m_Window->setFramerateLimit(FPS);
+
+	initObjects();
+}
+
+
+void MainApp::initObjects()
+{
+	circles.push_back(Circle({WINDOW_WIDTH / 4, WINDOW_HEIGHT / 6}, 40));
+	circles.push_back(Circle({ WINDOW_WIDTH / 3, WINDOW_HEIGHT / 1.3 }, 85));
+	circles.push_back(Circle({ WINDOW_WIDTH / 1.2, WINDOW_HEIGHT / 1.4 }, 90));
+}
+
+
+void MainApp::render()
+{
+	m_Window->clear(m_backgroundColor);
+
+	for (auto& circle : circles)
+		circle.Draw(m_Window);
+
+	m_Player.Draw(m_Window);
+
+	m_Window->display();
+}
+
+
+void MainApp::update(const sf::Time& frameTime)
+{
+	m_Player.Move(frameTime.asSeconds());
 }
 
 
@@ -57,22 +86,6 @@ void MainApp::handleEvents()
 			m_Player.LookAt({(float)mousePos.x, (float)mousePos.y});
 		}
 	}
-}
-
-
-void MainApp::render()
-{
-	m_Window->clear(m_backgroundColor);
-
-	m_Player.Draw(m_Window);
-
-	m_Window->display();
-}
-
-
-void MainApp::update(const sf::Time& frameTime)
-{
-	m_Player.Move(frameTime.asSeconds());
 }
 
 
