@@ -8,4 +8,4 @@ How to run project
 -----------------------
 
 Solution is made for Visual Studio 2019.  
-SFMl linked static, so you dont need to download anything.
+SFML linked static, so you dont need to download anything.
