@@ -7,5 +7,5 @@
 How to run project
 -----------------------
 
-Solution is made for Visual Studio 2019.  
+Solution is made for Visual Studio 2019, platform is x86. 
 SFML linked static, so you dont need to download anything.
