@@ -7,6 +7,5 @@
 How to run project
 -----------------------
 
-Solution is made for Visual Studio 2019.
+Solution is made for Visual Studio 2019.    
 Note that SFML lib works only on <b>x86</b> platform.
-
